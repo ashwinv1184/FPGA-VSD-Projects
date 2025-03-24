@@ -4,7 +4,7 @@
 ## FPGA:
 1) The FPGA (Field Programmable Gate Array), used for implementing and coding programs.
 2) It is powered by the Lattice UltraPlus ICE40UP5K FPGA.
-3) It offers 1 megabit of single port RAM (Random Access Memory), 120 kilobits of Dual Port RAM, and 8 multipliers which helps the chip to solve logical math problems for versatile design
+3) It offers 1 megabit of single port RAM (Random Access Memory), 120 kilobits of Dual Port RAM, and 8 multipliers which helps the chip to solve logical math problems for versatile design.
    capabilities.
 4) The Lattice UltraPlus ICE40UP5K FPGA has 5,040 Logic Cells (Approximately 5.3K Look-Up Tables).
 
@@ -65,16 +65,21 @@ https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/top.v
 
 ## Review of the module declaration:
 In the module top, there are 4 output wires. They are:
-output wire led_red  , // Red -- Shows output as red color in the RGB LED
-output wire led_blue , // Blue -- Shows output as blue color in the RGB LED
-output wire led_green , // Green -- Shows output as green color in the RGB LED
-output wire testwire -- For testing signal output
+output wire led_red  , // Red -- Shows output as red color in the RGB LED.
+output wire led_blue , // Blue -- Shows output as blue color in the RGB LED.
+output wire led_green , // Green -- Shows output as green color in the RGB LED.
+output wire testwire --It is a single bit output, provides debugging signal.
 These four output wires show us the output of our programming.
 
-hw_clk (Input): Hardware oscillator clock input -- For typing the inputs (codings) for the programming.
+hw_clk (Input): Hardware oscillator clock input -- It connects to the hardware oscillator. It provides the system clock signal that controls the board's timing.
 
 ## Internal Components:
+The module has three main internal components:
+1) Internal Oscillator (SB_HFOSC) instantiation - 
 
+2) Frequency counter logic driven by the internal oscillator
+
+3) RGB LED driver instantiation with defined current parameters
 
 
 
@@ -85,7 +90,18 @@ hw_clk (Input): Hardware oscillator clock input -- For typing the inputs (coding
 The PCF file has been refereed from this link given below:
  https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/VSDSquadronFM.pcf
 
+led_red -> Pin 39
 
+led_blue -> Pin 40
+
+led_green -> Pin 41
+
+hw_clk -> Pin 20
+
+testwire -> Pin 17
+
+Pin assignments have been marked in the data sheet.
+![image](https://github.com/user-attachments/assets/cee7652c-c99b-420e-978d-e8a95147c767)
 
 # Challenges faced and solutions implemented:
 Had to update the USB Settings in the laptop as it did not detect the option to connect with the board. Watched some videos on youtube and changed the settings.
