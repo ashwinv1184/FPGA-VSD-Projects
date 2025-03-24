@@ -62,4 +62,4 @@ For more data on about the VSDSquadron FPGA Mini (FM)  device, refer to https://
 # Understanding the Verilog Code:
 lll
 # Challenges faced and solutions implemented:
-Had to update the USB Settings in the laptop as it did not detect the option ![image](https://github.com/user-attachments/assets/7fbb81e5-074a-4537-8806-e9224f1022a7)
+Had to update the USB Settings in the laptop as it did not detect the option ![image](https://github.com/user-attachments/assets/6274aa3f-8301-417e-b543-dfec816f6965)
