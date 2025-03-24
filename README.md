@@ -65,13 +65,13 @@ https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/top.v
 
 ## Review of the module declaration:
 In the module top, there are 4 output wires. They are:
-output wire led_red  , // Red -- Shows output as red color in the RGB LED.
-output wire led_blue , // Blue -- Shows output as blue color in the RGB LED.
-output wire led_green , // Green -- Shows output as green color in the RGB LED.
-output wire testwire --It is a single bit output, provides debugging signal.
+1) output wire led_red  , // Red -- Shows output as red color in the RGB LED.
+2) output wire led_blue , // Blue -- Shows output as blue color in the RGB LED.
+3) output wire led_green , // Green -- Shows output as green color in the RGB LED.
+4) output wire testwire --It is a single bit output, provides debugging signal.
 These four output wires show us the output of our programming.
 
-hw_clk (Input): Hardware oscillator clock input -- It connects to the hardware oscillator. It provides the system clock signal that controls the board's timing.
+5) hw_clk (Input): Hardware oscillator clock input -- It connects to the hardware oscillator. It provides the system clock signal that controls the board's timing.
 
 ## Internal Components:
 The module has three main internal components:
@@ -87,21 +87,30 @@ The module has three main internal components:
  
 
 ## Creating the PCF file:
-The PCF file has been refereed from this link given below:
+The PCF (Physical Constraint File) file has been refereed from this link given below:
  https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/VSDSquadronFM.pcf
 
-led_red -> Pin 39
+led_red- set_io -> Pin 39
 
-led_blue -> Pin 40
+led_blue- set_io-> Pin 40
 
-led_green -> Pin 41
+led_green -set_io -> Pin 41
 
-hw_clk -> Pin 20
+hw_clk- set_io -> Pin 20
 
-testwire -> Pin 17
+testwire- set_io -> Pin 17
 
-Pin assignments have been marked in the data sheet.
+### Commands:
+1. set_io led_red 39 - Helps to send logical signals to control the LED to impile the color red.
+2. set_io led_blue 40 - Helps to send logical signals to control the LED to impile the color blue.
+3. set_io led_green 41 - Helps to send logical signals to control the LED to impile the color green.
+4. set_io hw_clk 20 - Assigns hardware clock signal to receive the clock inputs.
+5. set_io testwire 17 - Helps for testing and debugging.
+
+Pin assignments have been marked in the data sheet as purple colored circles.
 ![image](https://github.com/user-attachments/assets/cee7652c-c99b-420e-978d-e8a95147c767)
 
 # Challenges faced and solutions implemented:
 Had to update the USB Settings in the laptop as it did not detect the option to connect with the board. Watched some videos on youtube and changed the settings.
+
+(https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/Makefile) 
