@@ -60,6 +60,32 @@ For more data on about the VSDSquadron FPGA Mini (FM)  device, refer to https://
 5) Maximum height at the bottom side is 1mm
 
 # Understanding the Verilog Code:
-lll
+The verilog code has been referred from this link given below:
+https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/top.v
+
+## Review of the module declaration:
+In the module top, there are 4 output wires. They are:
+output wire led_red  , // Red -- Shows output as red color in the RGB LED
+output wire led_blue , // Blue -- Shows output as blue color in the RGB LED
+output wire led_green , // Green -- Shows output as green color in the RGB LED
+output wire testwire -- For testing signal output
+These four output wires show us the output of our programming.
+
+hw_clk (Input): Hardware oscillator clock input -- For typing the inputs (codings) for the programming.
+
+## Internal Components:
+
+
+
+
+
+ 
+
+## Creating the PCF file:
+The PCF file has been refereed from this link given below:
+ https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/VSDSquadronFM.pcf
+
+
+
 # Challenges faced and solutions implemented:
-Had to update the USB Settings in the laptop as it did not detect the option ![image](https://github.com/user-attachments/assets/6274aa3f-8301-417e-b543-dfec816f6965)
+Had to update the USB Settings in the laptop as it did not detect the option to connect with the board. Watched some videos on youtube and changed the settings.
