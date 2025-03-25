@@ -86,7 +86,7 @@ The module has three main internal components:
 
  
 
-## Creating the PCF file:
+# Creating the PCF file:
 The PCF (Physical Constraint File) file has been refereed from this link given below:
  https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/VSDSquadronFM.pcf
 
@@ -100,7 +100,7 @@ hw_clk- set_io -> Pin 20
 
 testwire- set_io -> Pin 17
 
-### Commands:
+## Commands:
 1. set_io led_red 39 - Helps to send logical signals to control the LED to impile the color red.
 2. set_io led_blue 40 - Helps to send logical signals to control the LED to impile the color blue.
 3. set_io led_green 41 - Helps to send logical signals to control the LED to impile the color green.
@@ -118,8 +118,13 @@ Pin assignments have been marked in the data sheet as purple colored circles.
 
 https://github.com/user-attachments/assets/62f57dd3-ce6b-4bee-aabb-2581b359b503
 
+# Summary:
+The verilog code has the control to implement the RGB LED. It has an internal oscillator to have the control flow of clock signals to the Board. There are four output wires which show us the output of our programming, One input wire provides the system clock signal that controls the board's timing. This module contains the three main internal components:
+1) Internal Oscillator (SB_HFOSC) instantiation - Stablises internal clock signal, 
 
+2) Frequency counter logic driven by the internal oscillator
 
+3) RGB LED driver instantiation with defined current parameters
 
 # Challenges faced and solutions implemented:
 Had to update the USB Settings in the laptop as it did not detect the option to connect with the board. Watched some videos on youtube and changed the settings.
@@ -132,4 +137,21 @@ Had to update the USB Settings in the laptop as it did not detect the option to 
 
 
 
-#TASK-2:
+# TASK-2:
+# UART LOOPBACK PROJECT:
+
+## Objective: Implement a UART loopback mechanism where transmitted data is immediately received back, facilitating testing of UART functionality.
+
+UART - Stands for Universal Asynchronous Receiver-Transmitter. It is similar to bluetooth. It is a serial communicating device used for short distance communication between devices, commonly used in computers, chips, microcontrollers etc... 
+
+## Studying the exisiting code:
+
+
+The code has been studied and referred from the below link:
+
+https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fthesourcerer8%2FVSDSquadron_FM%2Ftree%2Fmain%2Fuart_loopback&sa=D&source=calendar&usd=2&usg=AOvVaw2tz_YfIWz3X_XvprabSjtQ
+
+set_io  uarttx 14
+set_io  uartrx 15
+
+The above two codes defines the uart_loopback implementation mechanism.
