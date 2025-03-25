@@ -75,7 +75,7 @@ These four output wires show us the output of our programming.
 
 ## Internal Components:
 The module has three main internal components:
-1) Internal Oscillator (SB_HFOSC) instantiation - 
+1) Internal Oscillator (SB_HFOSC) instantiation - Stablises internal clock signal, 
 
 2) Frequency counter logic driven by the internal oscillator
 
@@ -110,7 +110,26 @@ testwire- set_io -> Pin 17
 Pin assignments have been marked in the data sheet as purple colored circles.
 ![image](https://github.com/user-attachments/assets/cee7652c-c99b-420e-978d-e8a95147c767)
 
+# Integrating with the VSDSquadron FPGA Mini Board:
+1) View the datasheet of the board and understand its aspects.
+2) Correlate the datasheet with the board
+3) Refer the connections of the board to the device with the datasheet and refer the codings to clear, build and to run the program in the board.
+4) The result after uploading the program into the board:
+
+https://github.com/user-attachments/assets/62f57dd3-ce6b-4bee-aabb-2581b359b503
+
+
+
+
 # Challenges faced and solutions implemented:
 Had to update the USB Settings in the laptop as it did not detect the option to connect with the board. Watched some videos on youtube and changed the settings.
 
 (https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/Makefile) 
+
+
+
+
+
+
+
+#TASK-2:
