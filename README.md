@@ -142,7 +142,7 @@ Had to update the USB Settings in the laptop as it did not detect the option to 
 
 ## Objective: Implement a UART loopback mechanism where transmitted data is immediately received back, facilitating testing of UART functionality.
 
-UART - Stands for Universal Asynchronous Receiver-Transmitter. It is similar to bluetooth. It is a serial communicating device used for short distance communication between devices, commonly used in computers, chips, microcontrollers etc... 
+UART - Stands for Universal Asynchronous Receiver-Transmitter (Hardware Communication Protocol). It is similar to a working principle of bluetooth. It is a serial communicating device used for short distance communication between devices, commonly used in computers, chips, microcontrollers etc... It has two pins, the TX (Transmitter) and RX (Receiver).
 
 ## Studying the exisiting code:
 
