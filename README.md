@@ -119,7 +119,7 @@ Pin assignments have been marked in the data sheet as purple colored circles.
 https://github.com/user-attachments/assets/62f57dd3-ce6b-4bee-aabb-2581b359b503
 
 # Summary:
-The verilog code has the control to implement the RGB LED. It has an internal oscillator to have the control flow of clock signals to the Board. There are four output wires which show us the output of our programming, One input wire provides the system clock signal that controls the board's timing. This module contains the three main internal components:
+The verilog code has the control to implement the RGB LED, it also implements an UART transmitter. It has an internal oscillator to have the control flow of clock signals to the Board. There are four output wires which show us the output of our programming, One input wire provides the system clock signal that controls the board's timing. This module contains the three main internal components:
 1) Internal Oscillator (SB_HFOSC) instantiation - Stablises internal clock signal, 
 
 2) Frequency counter logic driven by the internal oscillator
@@ -127,7 +127,7 @@ The verilog code has the control to implement the RGB LED. It has an internal os
 3) RGB LED driver instantiation with defined current parameters
 
 # Challenges faced and solutions implemented:
-Had to update the USB Settings in the laptop as it did not detect the option to connect with the board. Watched some videos on youtube and changed the settings.
+Had to update the USB Settings in the laptop as it did not detect the option to connect with the board. Watched some videos on youtube and changed the settings. The verilog code was a bit tough to understand but understood it with the help of .
 
 (https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/Makefile) 
 
@@ -142,10 +142,9 @@ Had to update the USB Settings in the laptop as it did not detect the option to 
 
 ## Objective: Implement a UART loopback mechanism where transmitted data is immediately received back, facilitating testing of UART functionality.
 
-UART - Stands for Universal Asynchronous Receiver-Transmitter (Hardware Communication Protocol). It is similar to a working principle of bluetooth. It is a serial communicating device used for short distance communication between devices, commonly used in computers, chips, microcontrollers etc... It has two pins, the TX (Transmitter) and RX (Receiver).
+UART - Stands for Universal Asynchronous Receiver-Transmitter (Hardware Communication Protocol). It is similar to a working principle of bluetooth. It is a serial communicating device used for short distance communication between devices, commonly used in computers, chips, microcontrollers etc... It has two pins, the TX (Transmitter) pin and RX (Receiver) pin.When the data is transmitted to the TX pin, it will instantly change its route path and receives the data to the RX pin of the respective module which is being programmed. 
 
 ## Studying the exisiting code:
-
 
 The code has been studied and referred from the below link:
 
