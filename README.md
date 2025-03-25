@@ -75,11 +75,30 @@ These four output wires show us the output of our programming.
 
 ## Internal Components:
 The module has three main internal components:
-1) Internal Oscillator (SB_HFOSC) instantiation - Stablises internal clock signal, 
+1) Internal Oscillator (SB_HFOSC) instantiation - Stablises internal clock signal Configuration: Uses CLKHF_DIV = "0b10" (binary 2) for clock division
+Control Signals:
+CLKHFPU = 1'b1 : Enables power-up
+CLKHFEN = 1'b1 : Enables oscillator
+CLKHF : Output connected to internal int_osc signal
 
-2) Frequency counter logic driven by the internal oscillator
 
-3) RGB LED driver instantiation with defined current parameters
+2) Frequency counter logic driven by the internal oscillator - Implementation: 28-bit register (frequency_counter_i)
+Operation: Increments on every positive edge of int_osc
+Test functionality: Bit 5 is routed to testwire for monitoring
+Purpose: Provides a way to verify oscillator operation and timing
+
+3) RGB LED driver instantiation with defined current parameters - Configuration:
+RGBLEDEN = 1'b1 : Enables LED operation
+RGB0PWM = 1'b0 : Red LED minimum brightness
+RGB1PWM = 1'b0 : Green LED minimum brightness
+RGB2PWM = 1'b1 : Blue LED maximum brightness
+CURREN = 1'b1 : Enables current control
+Current settings: All LEDs set to "0b000001" (minimum current)
+Output connections:
+RGB0 → led_red
+RGB1 → led_green
+RGB2 → led_blue
+
 
 
 
@@ -131,12 +150,6 @@ Had to update the USB Settings in the laptop as it did not detect the option to 
 
 (https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/Makefile) 
 
-
-
-
-
-
-
 # TASK-2:
 # UART LOOPBACK PROJECT:
 
@@ -154,3 +167,38 @@ set_io  uarttx 14
 set_io  uartrx 15
 
 The above two codes defines the uart_loopback implementation mechanism.
+The module explains six ports:
+
+Three RGB LED outputs (led_red, led_blue, led_green)
+UART transmit/receive pins (uarttx, uartrx)
+System clock input (hw_clk)
+Internal Component Analysis
+Internal Oscilliator (SB_HFOSC)
+Implements a high-frequency oscillator
+Uses CLKHF_DIV = "0b10" for frequency division
+Generates internal clock signal (int_osc)
+Frequency Counter
+28-bit counter (frequency_counter_i)
+Increments on every positive edge of internal oscillator
+Used for timing generation
+UART Loopback
+Direct connection between transmit and receive pins
+Echoes back any received UART data immediately
+RGB LED Driver (SB_RGBA_DRV)
+Controls three RGB channels
+Uses PWM (Pulse Width Modulation) for brightness control
+Current settings configured for each channel
+Maps UART input directly to LED intensity
+Operation Analysis
+UART Input Processing
+Received UART data appears on uartrx pin
+Data is immediately looped back out through uarttx
+Same data drives all RGB channels simultaneously
+LED Control
+RGB driver converts UART signal to PWM output
+All LEDs respond identically to input signal
+Current limiting set to minimum (0b000001) for each channel
+Timing Generation
+Internal oscillator provides clock reference
+Frequency counter generates timing signals
+Used for PWM generation and LED control
