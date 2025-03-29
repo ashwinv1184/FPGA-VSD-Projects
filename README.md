@@ -204,21 +204,16 @@ set_io  uartrx 15
 The above two codes defines the uart_loopback implementation mechanism.
 The module explains six ports:
 
-Three RGB LED outputs (led_red, led_blue, led_green)
-UART transmit/receive pins (uarttx, uartrx)
-System clock input (hw_clk)
-Internal Component Analysis
-Internal Oscilliator (SB_HFOSC)
-Implements a high-frequency oscillator
-Uses CLKHF_DIV = "0b10" for frequency division
-Generates internal clock signal (int_osc)
-Frequency Counter
-28-bit counter
-Increments on every positive edge of internal oscillator
-Used for timing generation
-UART Loopback
-Direct connection between transmit and receive pins
-Echoes back any received UART data immediately
+Three RGB LED outputs- They are led_red, led_blue and led_green
+UART transmit/receive pins-(uarttx, uartrx)
+System clock input signal-(hw_clk)
+Internal Component Analysis:
+Internal Oscilliator signal-(SB_HFOSC) which gives a high frequency oscillator and uses CLKHF_DIV = "0b10" for frequency division, produces internal clock signal (int_osc)
+Frequency Counter-(28-bit counter)-Adds ups a value which occurs at every rising edge (transition from low to high) of the int_osc signal
+and also utilized for timing generation.
+UART Loopback:
+There is a direct interconnection among the transmitter and receiver pins.
+Ret back any received UART data immediately
 RGB LED Driver (SB_RGBA_DRV)
 Controls three RGB channels
 Uses PWM (Pulse Width Modulation) for brightness control
