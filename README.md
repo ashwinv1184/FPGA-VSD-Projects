@@ -93,16 +93,27 @@ It implements a 28-bit register and increases or adds to a value which occurs at
 
 3) RGB LED driver instantiation with defined current parameters -
 Pattern:
+
 RGBLEDEN = 1'b1 : Enables LED operation
+
 RGB0PWM = 1'b0 : Executes Red LED minimum radiance
+
 RGB1PWM = 1'b0 : Executes Green LED minimum radiance
+
 RGB2PWM = 1'b1 : Executes Blue LED maximum radiance
+
 CURREN = 1'b1 : Enables current control
+
 Current settings: The minimum current is set to all LEDs is "0b000001"
+
 Output connections:
+
 RGB0--(led_red)
+
 RGB--(led_green)
+
 RGB2--(led_blue)  
+
 # Creating the PCF file:
 The PCF (Physical Constraint File) file has been referred from this link given below:
  https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/VSDSquadronFM.pcf
