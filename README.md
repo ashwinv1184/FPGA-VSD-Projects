@@ -148,6 +148,8 @@ Setting up the hardware and codings:
 
 https://github.com/user-attachments/assets/62f57dd3-ce6b-4bee-aabb-2581b359b503
 
+The program has been successfully completed!
+
 # Summary:
 The verilog code has the control to implement the RGB LED, it also implements an UART transmitter. It has an internal oscillator to have the control flow of clock signals to the Board. There are four output wires which show us the output of our programming, One input wire provides the system clock signal that controls the board's timing. This module contains the three main internal components:
 1) Internal Oscillator (SB_HFOSC) instantiation - Stablises internal clock signal, 
@@ -168,7 +170,14 @@ hw_clk--> Pin 20
 
 testwire--> Pin 17
 
-Integration steps: 
+Integration steps: 1) View the datasheet of the board and understand its aspects.
+2) Correlate the datasheet with the board
+3) Refer the connections of the board to the device with the datasheet and refer the codings to clear, build and to run the program in the board.
+
+4) The result after uploading the program into the board:
+
+https://github.com/user-attachments/assets/62f57dd3-ce6b-4bee-aabb-2581b359b503
+
 # Challenges faced and solutions implemented:
 Had to update the USB Settings in the laptop as it did not detect the option to connect with the board. Watched some videos on youtube and changed the settings. The verilog code was a bit tough to understand but understood it with the help of  .
 
@@ -202,7 +211,7 @@ Implements a high-frequency oscillator
 Uses CLKHF_DIV = "0b10" for frequency division
 Generates internal clock signal (int_osc)
 Frequency Counter
-28-bit counter (frequency_counter_i)
+28-bit counter
 Increments on every positive edge of internal oscillator
 Used for timing generation
 UART Loopback
