@@ -202,20 +202,12 @@ set_io  uarttx 14
 set_io  uartrx 15
 
 The above two codes defines the uart_loopback implementation mechanism.
-The module explains six ports:
 
-Three RGB LED outputs- They are led_red, led_blue and led_green; UART transmit/receive pins-(uarttx, uartrx); System clock input signal-(hw_clk)
-Internal Component Analysis:
-Internal Oscilliator signal-(SB_HFOSC) which gives a high frequency oscillator and uses CLKHF_DIV = "0b10" for frequency division, produces internal clock signal (int_osc)
-Frequency Counter-(28-bit counter)-Adds ups a value which occurs at every rising edge (transition from low to high) of the int_osc signal
-and also utilized for timing generation.
-UART Loopback:
-There is a direct interconnection among the transmitter and receiver pins.
-Ret back any received UART data immediately
-RGB LED Driver (SB_RGBA_DRV)- A controller signal for the three RGB LEDs
-PWM (Pulse Width Modulation)-Controls the brightness of the LEDs
-Current settings configured for each channel
-Maps UART input directly to LED intensity
+## Analysis:
+1) Three RGB LED outputs- They are led_red, led_blue and led_green; UART transmit/receive pins-(uarttx, uartrx); System clock input signal-(hw_clk). Internal Oscilliator signal-(SB_HFOSC) which gives a high frequency oscillator and uses CLKHF_DIV = "0b10" for frequency division, produces internal clock signal (int_osc)
+ 
+2) Frequency Counter-(28-bit counter)-Adds ups a value which occurs at every rising edge (transition from low to high) of the int_osc signal and is also utilized for timing generation. UART Loopback has a direct interconnection among the transmitter and receiver pins, returns back any received UART data instantly.
+3) RGB LED Driver (SB_RGBA_DRV)- A controller signal for the three RGB LEDs. PWM (Pulse Width Modulation)-Controls the brightness of the LEDs. Current settings has been configured for each channel. Automatically maps UART inputs directly to LED power.
 Operation Analysis
 UART Input Processing
 Received UART data appears on uartrx pin
