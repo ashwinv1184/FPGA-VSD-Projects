@@ -59,6 +59,8 @@ For more data on about the VSDSquadron FPGA Mini (FM)  device, refer to https://
 
 5) Maximum height at the bottom side is 1mm
 
+# Objective: To understand and document the provided Verilog code, create the necessary PCF file, and integrate the design with the VSDSquadron FPGA Mini board using the provided datasheet. (install tools as explained in datasheet)
+
 # Understanding the Verilog Code:
 The verilog code has been referred from this link given below:
 https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/top.v
