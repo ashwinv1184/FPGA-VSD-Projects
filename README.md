@@ -139,9 +139,11 @@ Pin assignments have been marked in the data sheet as purple colored circles.
 ![image](https://github.com/user-attachments/assets/cee7652c-c99b-420e-978d-e8a95147c767)
 
 # Integrating with the VSDSquadron FPGA Mini Board:
+Setting up the hardware and codings:
 1) View the datasheet of the board and understand its aspects.
 2) Correlate the datasheet with the board
 3) Refer the connections of the board to the device with the datasheet and refer the codings to clear, build and to run the program in the board.
+
 4) The result after uploading the program into the board:
 
 https://github.com/user-attachments/assets/62f57dd3-ce6b-4bee-aabb-2581b359b503
@@ -154,8 +156,21 @@ The verilog code has the control to implement the RGB LED, it also implements an
 
 3) RGB LED driver instantiation with defined current parameters
 
+4) Pin mappings from the PCF file:
+
+led_red--> Pin 39
+
+led_blue--> Pin 40
+
+led_green--> Pin 41
+
+hw_clk--> Pin 20
+
+testwire--> Pin 17
+
+Integration steps: 
 # Challenges faced and solutions implemented:
-Had to update the USB Settings in the laptop as it did not detect the option to connect with the board. Watched some videos on youtube and changed the settings. The verilog code was a bit tough to understand but understood it with the help of .
+Had to update the USB Settings in the laptop as it did not detect the option to connect with the board. Watched some videos on youtube and changed the settings. The verilog code was a bit tough to understand but understood it with the help of  .
 
 (https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/Makefile) 
 
