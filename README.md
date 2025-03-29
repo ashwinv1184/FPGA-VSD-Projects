@@ -75,38 +75,36 @@ These four output wires show us the output of our programming.
 
 ## Internal Components:
 The module has three main internal components:
-1) Internal Oscillator (SB_HFOSC) instantiation - Stablises internal clock signal Configuration: Uses CLKHF_DIV = "0b10" (binary 2) for clock division
-Control Signals:
-CLKHFPU = 1'b1 : Enables power-up
-CLKHFEN = 1'b1 : Enables oscillator
-CLKHF : Output connected to internal int_osc signal
 
+1) Internal Oscillator (SB_HFOSC) instantiation - Stablises internal clock signal
 
-2) Frequency counter logic driven by the internal oscillator - Implementation: 28-bit register (frequency_counter_i)
-Operation: Increments on every positive edge of int_osc
-Test functionality: Bit 5 is routed to testwire for monitoring
-Purpose: Provides a way to verify oscillator operation and timing
+ CLKHF_DIV = "0b10" (binary 2) [enables for clock division]
 
-3) RGB LED driver instantiation with defined current parameters - Configuration:
+*)Control Signals:
+
+i) CLKHFPU = 1'b1 : Validates power-up
+
+ii) CLKHFEN = 1'b1 : Empowers oscillator
+
+iii) CLKHF : The output signal which is connected to the internal oscillator.
+
+2) Frequency counter logic driven by the internal oscillator:
+It implements a 28-bit register and increases or adds to a value which occurs at every rising edge (transition from low to high) of the int_osc signal. Bit 5 is interconnected to testwire for controlling, Provides a way to correct the working oscillator and timing.
+
+3) RGB LED driver instantiation with defined current parameters -
+Pattern:
 RGBLEDEN = 1'b1 : Enables LED operation
-RGB0PWM = 1'b0 : Red LED minimum brightness
-RGB1PWM = 1'b0 : Green LED minimum brightness
-RGB2PWM = 1'b1 : Blue LED maximum brightness
+RGB0PWM = 1'b0 : Executes Red LED minimum radiance
+RGB1PWM = 1'b0 : Executes Green LED minimum radiance
+RGB2PWM = 1'b1 : Executes Blue LED maximum radiance
 CURREN = 1'b1 : Enables current control
-Current settings: All LEDs set to "0b000001" (minimum current)
+Current settings: The minimum current is set to all LEDs is "0b000001"
 Output connections:
-RGB0 → led_red
-RGB1 → led_green
-RGB2 → led_blue
-
-
-
-
-
- 
-
+RGB0--(led_red)
+RGB--(led_green)
+RGB2--(led_blue)  
 # Creating the PCF file:
-The PCF (Physical Constraint File) file has been refereed from this link given below:
+The PCF (Physical Constraint File) file has been referred from this link given below:
  https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/VSDSquadronFM.pcf
 
 led_red- set_io -> Pin 39
