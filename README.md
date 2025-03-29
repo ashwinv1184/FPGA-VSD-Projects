@@ -154,7 +154,7 @@ The program has been successfully completed!
 
 # Summary:
 The verilog code has the control to implement the RGB LED, it also implements an UART transmitter. It has an internal oscillator to have the control flow of clock signals to the Board. There are four output wires which show us the output of our programming, One input wire provides the system clock signal that controls the board's timing. This module contains the three main internal components:
-1) Internal Oscillator (SB_HFOSC) instantiation - Stablises internal clock signal, 
+1) Internal Oscillator (SB_HFOSC) instantiation - Stablises internal clock signal 
 
 2) Frequency counter logic driven by the internal oscillator
 
@@ -204,9 +204,7 @@ set_io  uartrx 15
 The above two codes defines the uart_loopback implementation mechanism.
 The module explains six ports:
 
-Three RGB LED outputs- They are led_red, led_blue and led_green
-UART transmit/receive pins-(uarttx, uartrx)
-System clock input signal-(hw_clk)
+Three RGB LED outputs- They are led_red, led_blue and led_green; UART transmit/receive pins-(uarttx, uartrx); System clock input signal-(hw_clk)
 Internal Component Analysis:
 Internal Oscilliator signal-(SB_HFOSC) which gives a high frequency oscillator and uses CLKHF_DIV = "0b10" for frequency division, produces internal clock signal (int_osc)
 Frequency Counter-(28-bit counter)-Adds ups a value which occurs at every rising edge (transition from low to high) of the int_osc signal
@@ -214,9 +212,8 @@ and also utilized for timing generation.
 UART Loopback:
 There is a direct interconnection among the transmitter and receiver pins.
 Ret back any received UART data immediately
-RGB LED Driver (SB_RGBA_DRV)
-Controls three RGB channels
-Uses PWM (Pulse Width Modulation) for brightness control
+RGB LED Driver (SB_RGBA_DRV)- A controller signal for the three RGB LEDs
+PWM (Pulse Width Modulation)-Controls the brightness of the LEDs
 Current settings configured for each channel
 Maps UART input directly to LED intensity
 Operation Analysis
@@ -227,7 +224,7 @@ Same data drives all RGB channels simultaneously
 LED Control
 RGB driver converts UART signal to PWM output
 All LEDs respond identically to input signal
-Current limiting set to minimum (0b000001) for each channel
+Electric Current limiting set to minimum (0b000001) for each channel
 Timing Generation
 Internal oscillator provides clock reference
 Frequency counter generates timing signals
