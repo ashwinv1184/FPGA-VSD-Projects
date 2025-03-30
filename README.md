@@ -207,17 +207,16 @@ The above two codes defines the uart_loopback implementation mechanism.
 1) Three RGB LED outputs- They are led_red, led_blue and led_green; UART transmit/receive pins-(uarttx, uartrx); System clock input signal-(hw_clk). Internal Oscilliator signal-(SB_HFOSC) which gives a high frequency oscillator and uses CLKHF_DIV = "0b10" for frequency division, produces internal clock signal (int_osc)
  
 2) Frequency Counter-(28-bit counter)-Adds ups a value which occurs at every rising edge (transition from low to high) of the int_osc signal and is also utilized for timing generation. UART Loopback has a direct interconnection among the transmitter and receiver pins, returns back any received UART data instantly.
-3) RGB LED Driver (SB_RGBA_DRV)- A controller signal for the three RGB LEDs. PWM (Pulse Width Modulation)-Controls the brightness of the LEDs. Current settings has been configured for each channel. Automatically maps UART inputs directly to LED power.
-Operation Analysis
-UART Input Processing
-Received UART data appears on uartrx pin
-Data is immediately looped back out through uarttx
-Same data drives all RGB channels simultaneously
-LED Control
+
+3) RGB LED Driver (SB_RGBA_DRV)- A controller signal for the three RGB LEDs. PWM (Pulse Width Modulation)-Controls the brightness of the LEDs. The Electric Current settings has been configured for each channel. Automatically maps UART inputs directly to LED power cell.
+
+4) The way of UART Input Processing system:
+The data which is passed is received immediately to the receiver pin (uartrx) which again sends the data back through the transmitter pin uarttx.
+
+5) LED Control system processing:
 RGB driver converts UART signal to PWM output
-All LEDs respond identically to input signal
-Electric Current limiting set to minimum (0b000001) for each channel
-Timing Generation
+All RGB LEDs respond similarly to the given input signal
+Electric Current limiting set to minimum (0b000001) for each connection (channel).
 Internal oscillator provides clock reference
 Frequency counter generates timing signals
 Used for PWM generation and LED control
