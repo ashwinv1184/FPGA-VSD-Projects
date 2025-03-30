@@ -216,7 +216,4 @@ The data which is passed is received immediately to the receiver pin (uartrx) wh
 5) LED Control system processing:
 RGB driver converts UART signal to PWM output
 All RGB LEDs respond similarly to the given input signal
-Electric Current limiting set to minimum (0b000001) for each connection (channel).
-Internal oscillator provides clock reference
-Frequency counter generates timing signals
-Used for PWM generation and LED control
+Electric Current limiting set to minimum (0b000001) for each connection (channel). The Generation of timing signals (clock signals) is provided by the Frequency Counter and also used for generation of PMW (Pulse Module Width) and Time signals. Pulse Module Width (PMW) refers to a technique used in digital electronics and telecommunications to control the width of pulses in a digital signal.
