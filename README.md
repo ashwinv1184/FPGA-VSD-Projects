@@ -238,7 +238,7 @@ Electric Current limiting set to minimum (0b000001) for each connection (channel
 # Objective:
  To Develop a UART transmitter module capable of sending serial data from the FPGA to an external device.
 
-The uart_tx project has been accessed from the VSDSquadron_FM repository.
+The uart_tx project has been accessed from the https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fthesourcerer8%2FVSDSquadron_FM%2Ftree%2Fmain%2Fuart_tx&sa=D&source=calendar&usd=2&usg=AOvVaw3-Cge9GL-4ksDqw8yRPbgl link.
 
 1) Signals for data flow:
 STATE_IDLE → Waits to send the data.
