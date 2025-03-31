@@ -59,7 +59,8 @@ For more data on about the VSDSquadron FPGA Mini (FM)  device, refer to https://
 
 5) Maximum height at the bottom side is 1mm
 
-# Objective: To understand and document the provided Verilog code, create the necessary PCF file, and integrate the design with the VSDSquadron FPGA Mini board using the provided datasheet. (install tools as explained in datasheet)
+# Objective:
+To understand and document the provided Verilog code, create the necessary PCF file, and integrate the design with the VSDSquadron FPGA Mini board using the provided datasheet. (install tools as explained in datasheet)
 
 # Understanding the Verilog Code:
 The verilog code has been referred from this link given below:
@@ -188,7 +189,8 @@ Had to update the USB Settings in the laptop as it did not detect the option to 
 # TASK-2:
 # UART LOOPBACK PROJECT:
 
-## Objective: Implement a UART loopback mechanism where transmitted data is immediately received back, facilitating testing of UART functionality.
+## Objective:
+To Implement a UART loopback mechanism where transmitted data is immediately received back, facilitating testing of UART functionality.
 
 UART - Stands for Universal Asynchronous Receiver-Transmitter (Hardware Communication Protocol). It is similar to a working principle of bluetooth. It is a serial communicating device used for short distance communication between devices, commonly used in computers, chips, microcontrollers etc... It has two pins, the TX (Transmitter) pin and RX (Receiver) pin.When the data is transmitted to the TX pin, it will instantly change its route path and receives the data to the RX pin of the respective module which is being programmed. 
 
@@ -199,6 +201,7 @@ The code has been studied and referred from the below link:
 https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fthesourcerer8%2FVSDSquadron_FM%2Ftree%2Fmain%2Fuart_loopback&sa=D&source=calendar&usd=2&usg=AOvVaw2tz_YfIWz3X_XvprabSjtQ
 
 set_io  uarttx 14
+
 set_io  uartrx 15
 
 The above two codes defines the uart_loopback implementation mechanism.
@@ -222,3 +225,20 @@ Electric Current limiting set to minimum (0b000001) for each connection (channel
 
 ### UART LOOPBACK ARCHITECTURE
 ![image](https://github.com/user-attachments/assets/1ca177e5-ef2c-4cc8-bbdc-fa5d7f224ef2)
+
+### Detailed circuit diagram showing connections between the FPGA and any peripheral devices
+
+
+
+
+
+
+# TASK-3:
+# Objective:
+ To Develop a UART transmitter module capable of sending serial data from the FPGA to an external device.
+
+6) Signals for data flow:
+STATE_IDLE → Waits for senddata.
+STATE_STARTTX → Sends start bit (0).
+STATE_TXING → Sends 8-bit data (LSB first).
+STATE_TXDONE → Sends stop bit (1), marks completion.
