@@ -203,7 +203,7 @@ set_io  uartrx 15
 
 The above two codes defines the uart_loopback implementation mechanism.
 
-## Analysis:
+### Analysis:
 1) Three RGB LED outputs- They are led_red, led_blue and led_green; UART transmit/receive pins-(uarttx, uartrx); System clock input signal-(hw_clk). Internal Oscilliator signal-(SB_HFOSC) which gives a high frequency oscillator and uses CLKHF_DIV = "0b10" for frequency division, produces internal clock signal (int_osc)
  
 2) Frequency Counter-(28-bit counter)-Adds ups a value which occurs at every rising edge (transition from low to high) of the int_osc signal and is also utilized for timing generation. UART Loopback has a direct interconnection among the transmitter and receiver pins, returns back any received UART data instantly.
@@ -217,3 +217,8 @@ The data which is passed is received immediately to the receiver pin (uartrx) wh
 RGB driver converts UART signal to PWM output
 All RGB LEDs respond similarly to the given input signal
 Electric Current limiting set to minimum (0b000001) for each connection (channel). The Generation of timing signals (clock signals) is provided by the Frequency Counter and also used for generation of PMW (Pulse Module Width) and Time signals. Pulse Module Width (PMW) refers to a technique used in digital electronics and telecommunications to control the width of pulses in a digital signal.
+
+## Design Documentation:
+
+### UART LOOPBACK ARCHITECTURE
+![image](https://github.com/user-attachments/assets/1ca177e5-ef2c-4cc8-bbdc-fa5d7f224ef2)
