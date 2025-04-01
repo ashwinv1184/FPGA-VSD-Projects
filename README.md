@@ -319,9 +319,13 @@ A circuit diagram illustrating the FPGA's UART TX pin connection to the receivin
 
 ## Implementation, Testing and Verification:
 Step-1: Build the code by using make build.
+
 Step-2: Flash the code to the board by running sudo make flash
+
 Step-3: Run the code by executing sudo make terminal for testing and verification of transmission.
+
 The result and demonstration is shown in the video. 
+
 https://github.com/user-attachments/assets/c92f18ad-6e08-41ab-8f7f-6b4268c47260
 
 https://github.com/user-attachments/assets/d357b396-fe50-4995-9872-9ea229e3a210
