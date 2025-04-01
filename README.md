@@ -255,7 +255,16 @@ Step-5: Then a message will be shown as "*** local echo: yes ***". Then, whateve
 
 https://github.com/user-attachments/assets/a86fd7d5-ef5f-4564-9969-ab1c05fefd6e
 
+## Documentation:
+The diagrams explaining the uart loopback architecture and the detailed circuit diagram showing connections between the FPGA and any peripheral devices.
 
+![image](https://github.com/user-attachments/assets/1ca177e5-ef2c-4cc8-bbdc-fa5d7f224ef2)
+
+![image](https://github.com/user-attachments/assets/08b9af3b-594f-4c40-aac0-367a96f8d4ba)
+
+The Result with video demonstration of the uart loopback implementation in action.
+
+https://github.com/user-attachments/assets/a86fd7d5-ef5f-4564-9969-ab1c05fefd6e
 
 # TASK-3:
 
