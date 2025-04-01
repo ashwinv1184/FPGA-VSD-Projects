@@ -311,3 +311,26 @@ tx,       - transmitter wire.
 ## Design Documentation:
 
 A block diagram detailing the UART transmitter module:
+![image](https://github.com/user-attachments/assets/0d3d65ce-7011-4585-9762-0ec35005547b)
+
+A circuit diagram illustrating the FPGA's UART TX pin connection to the receiving device:
+![image](https://github.com/user-attachments/assets/0c109aee-f460-4f32-9072-dcb869808ca5)
+
+
+## Implementation, Testing and Verification:
+Step-1: Build the code by using make build.
+Step-2: Flash the code to the board by running sudo make flash
+Step-3: Run the code by executing sudo make terminal for testing and verification of transmission.
+The result and demonstration is shown in the video. 
+https://github.com/user-attachments/assets/c92f18ad-6e08-41ab-8f7f-6b4268c47260
+
+https://github.com/user-attachments/assets/d357b396-fe50-4995-9872-9ea229e3a210
+
+
+## Documentation:
+Block diagram and Circuit diagram:
+![image](https://github.com/user-attachments/assets/0d3d65ce-7011-4585-9762-0ec35005547b)
+![image](https://github.com/user-attachments/assets/0c109aee-f460-4f32-9072-dcb869808ca5)
+
+Video demonstration:
+https://github.com/user-attachments/assets/d357b396-fe50-4995-9872-9ea229e3a210
