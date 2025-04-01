@@ -22,6 +22,9 @@
 1) RGB Light Emitting Diode has been installed in the board for manual functionality.
 
 ## FPGA Board:
+![image](https://github.com/user-attachments/assets/93f06620-c2ce-4afd-8743-33a96eb377e0)
+
+
 The VSDSquadron FPGA Mini (FM) board is a low cost, small tool for prototyping and
 embedded system development. With powerful ICE40UP5K FPGA, onboard programming, dynamic
 GPIO access, SPI flash, and integrated power regulation, it enables efficient design, testing, and
