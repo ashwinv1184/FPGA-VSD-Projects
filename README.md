@@ -273,6 +273,9 @@ https://github.com/user-attachments/assets/a86fd7d5-ef5f-4564-9969-ab1c05fefd6e
 
 The uart_tx project has been accessed from this file https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fthesourcerer8%2FVSDSquadron_FM%2Ftree%2Fmain%2Fuart_tx&sa=D&source=calendar&usd=2&usg=AOvVaw3-Cge9GL-4ksDqw8yRPbgl.
 
+The UART transmitter module is responsible for transmitting serial data from a microcontroller or other device to an external device, such as a computer or another microcontroller.
+
+
 1) Signals for data flow (According to the module):
  
 STATE_IDLE → Waits to send the data.
@@ -292,5 +295,51 @@ tx,       - transmitter wire.
 
 2) Module Analysis:
 
-Baud Rate generation:
+ 1. Data Register - Holds the data to be transmitted 
+ 2. Shift Register - Transmits data serially from UART transmitter module 
+ 3. Clock Generator - Generates clock signal controlling data relay 
+ 4. Control Logic - Controls data transmission, start/stop bit generation 
+ 5. Data Loading - Loads data into data register for transmission 
+ 6. Start Bit Generation - Control logic generates start bit, transmitted first 
+ 7. Data Transmission - Shift register transmits data one bit at a time, controlled by clock generator 
+ 8. Stop Bit Generation - Control logic generates stop bit, transmitted last 
+ 9. Baud Rate Generator: Generates 9600 baud clock from a 12 MHz input clock.
+ 10. State Machine States
+IDLE STATE (STATE_IDLE)
 
+If senddata = 1 and the state is STATE_IDLE, it:
+
+Moves to the STATE_STARTTX state.
+
+Loads txbyte (8-bit data to transmit) into buf_tx.
+
+Clears txdone (indicates transmission is ongoing).
+
+Otherwise, if still in STATE_IDLE, it:
+
+Keeps txbit high (1) because UART idles at high.
+
+Ensures txdone remains low (0).
+
+Start Bit Transmission (STATE_STARTTX)
+
+Once in STATE_STARTTX, it:
+Sets txbit low (0) (start bit in UART communication).
+Moves to STATE_TXING to transmit data bits.
+Sending Data Bits (STATE_TXING)
+
+If state == STATE_TXING and bits_sent < 8, it:
+Sends the Least Significant Bit (LSB) of buf_tx.
+Shifts buf_tx right (>> 1).
+Increments bits_sent.
+Stp Bit Transmission (STATE_TXDONE)
+
+After 8 data bits are transmitted, it:
+Sends the stop bit (1).
+Resets bits_sent to 0.
+Moves to STATE_TXDONE.
+Transmission Complete (STATE_TXDONE → STATE_IDLE)
+
+In STATE_TXDONE, it:
+Sets txdone = 1 (indicates transmission complete).
+Returns to STATE_IDLE.
