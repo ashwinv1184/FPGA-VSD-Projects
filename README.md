@@ -304,6 +304,10 @@ tx,       - transmitter wire.
  7. Data Transmission - Shift register transmits data one bit at a time, controlled by clock generator 
  8. Stop Bit Generation - Control logic generates stop bit, transmitted last 
  9. Baud Rate Generator: Generates 9600 baud clock from a 12 MHz input clock.
- 10. Machine States
-     Idle State (STATE_IDLE),Start Bit Transmission (STATE_STARTTX),Sending Data Bits (STATE_TXING),Stp Bit Transmission (STATE_TXDONE),Transmission 
-     Complete (STATE_TXDONE → STATE_IDLE)
+ 10.Machine States:
+     Idle State (STATE_IDLE),Start Bit Transmission (STATE_STARTTX),Sending Data Bits (STATE_TXING),Stop Bit Transmission (STATE_TXDONE),Transmission 
+     Completion (STATE_TXDONE → STATE_IDLE)
+
+## Design Documentation:
+
+A block diagram detailing the UART transmitter module:
