@@ -1,3 +1,5 @@
+
+https://github.com/user-attachments/assets/fbee9a8f-5195-4aa5-8477-215e3f2cc2ff
 # FPGA-VSD-Projects (TASK-1)
 # INTRODUCTION
 
@@ -143,8 +145,11 @@ Pin assignments have been marked in the data sheet as purple colored circles.
 
 # Integrating with the VSDSquadron FPGA Mini Board:
 Setting up the hardware and codings:
+
 1) View the datasheet of the board and understand its aspects.
+ 
 2) Correlate the datasheet with the board
+ 
 3) Refer the connections of the board to the device with the datasheet and refer the codings to clear, build and to run the program in the board.
 
 4) The result after uploading the program into the board:
@@ -155,13 +160,15 @@ The program has been successfully completed!
 
 # Summary:
 The verilog code has the control to implement the RGB LED, it also implements an UART transmitter. It has an internal oscillator to have the control flow of clock signals to the Board. There are four output wires which show us the output of our programming, One input wire provides the system clock signal that controls the board's timing. This module contains the three main internal components:
-1) Internal Oscillator (SB_HFOSC) instantiation - Stablises internal clock signal 
 
-2) Frequency counter logic driven by the internal oscillator
+1) i) Internal Oscillator (SB_HFOSC) instantiation - Stablises
+internal clock signal 
 
-3) RGB LED driver instantiation with defined current parameters
+ii) Frequency counter logic driven by the internal oscillator
 
-4) Pin mappings from the PCF file:
+iii) RGB LED driver instantiation with defined current parameters
+
+2) Pin mappings from the PCF file:
 
 led_red--> Pin 39
 
@@ -173,8 +180,10 @@ hw_clk--> Pin 20
 
 testwire--> Pin 17
 
-Integration steps: 1) View the datasheet of the board and understand its aspects.
+3) Integration steps: 1) View the datasheet of the board and understand its aspects.
+   
 2) Correlate the datasheet with the board
+ 
 3) Refer the connections of the board to the device with the datasheet and refer the codings to clear, build and to run the program in the board.
 
 4) The result after uploading the program into the board:
@@ -229,15 +238,28 @@ Electric Current limiting set to minimum (0b000001) for each connection (channel
 ### Detailed circuit diagram showing connections between the FPGA and any peripheral devices
 ![image](https://github.com/user-attachments/assets/08b9af3b-594f-4c40-aac0-367a96f8d4ba)
 
-## Implementation:
+## Implementation, Testing and Verification:
 
-Step-1: Install Gtkwave software
+Step-1: Start the OracleVirtualBox.
 
-Step-2: Start the OracleVirtualBox.
+Step-2: Connect the FPGA Board to the device with the USB-C Cable. To check if it is connected, type the lusb command and you will see a message which has Future Technology Devices International wordings.
 
-Step-3: Connect the FPGA Board to the device with the USB-C Cable. To check if it is connected, type the lusb command and you will see Future 
+Step-3: Install picocom by typing the following commands in the terminal
 
-Step-4: 
+apt install picocom
+
+make terminal
+
+Step-4: The system will acknowledge you to type Control + c - a or Control c - h. A message will be shown as "Terminal ready"
+
+Step-5: Then a message will be shown as "*** local echo: yes ***". Then, type what you deserve and enter. Whatever characters you type and hit enter, all these characters will be displayed back as shown in the video. This is the demonstration of the uart loopback system and also verified within the terminal.
+
+https://github.com/user-attachments/assets/a86fd7d5-ef5f-4564-9969-ab1c05fefd6e
+
+
+
+
+
 
 # TASK-3:
 
@@ -254,9 +276,12 @@ STATE_TXDONE → Sends stop bit (1), marks the accomplishment of the program.
 
 Definitions:
 clk,      -  input clock signal
-txbyte,   - Marks the outgoing byte
+txbyte,   - outgoing byte
 senddata, - triggers tx (transmitter) signal
 txdone,   - signal stating outgoing byte sent
 tx,       - transmitter wire.
 
-2) 
+2) Module Analysis:
+
+Baud Rate generation:
+
