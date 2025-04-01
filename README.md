@@ -265,9 +265,13 @@ https://github.com/user-attachments/assets/a86fd7d5-ef5f-4564-9969-ab1c05fefd6e
 The uart_tx project has been accessed from this file https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fthesourcerer8%2FVSDSquadron_FM%2Ftree%2Fmain%2Fuart_tx&sa=D&source=calendar&usd=2&usg=AOvVaw3-Cge9GL-4ksDqw8yRPbgl.
 
 1) Signals for data flow (According to the module):
+ 
 STATE_IDLE → Waits to send the data.
+
 STATE_STARTTX → Sends start bit signal (0).
+
 STATE_TXING → Sends 8-bit data signal,it sends Least Significant Bit (LSB) first.
+
 STATE_TXDONE → Sends stop bit (1), marks the accomplishment of the program.
 
 Definitions:
