@@ -182,7 +182,7 @@ Integration steps: 1) View the datasheet of the board and understand its aspects
 https://github.com/user-attachments/assets/62f57dd3-ce6b-4bee-aabb-2581b359b503
 
 # Challenges faced and solutions implemented:
-Had to update the USB Settings in the laptop as it did not detect the option to connect with the board. Watched some videos on youtube and changed the settings. The verilog code was a bit tough to understand but understood it with the help of  .
+Had to update the USB Settings in the laptop as it did not detect the option to connect with the board. Watched some videos on youtube and changed the settings. The verilog code was a bit tough to understand but understood it with the help of Meta AI (Whatsapp) and google .
 
 (https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/Makefile) 
 
@@ -223,25 +223,36 @@ Electric Current limiting set to minimum (0b000001) for each connection (channel
 
 ## Design Documentation:
 
-### UART LOOPBACK ARCHITECTURE
+### UART LOOPBACK ARCHITECTURE:
 ![image](https://github.com/user-attachments/assets/1ca177e5-ef2c-4cc8-bbdc-fa5d7f224ef2)
 
 ### Detailed circuit diagram showing connections between the FPGA and any peripheral devices
+![image](https://github.com/user-attachments/assets/08b9af3b-594f-4c40-aac0-367a96f8d4ba)
 
+## Implementation:
 
+Step-1: Install Gtkwave software
 
+Step-2: Start the OracleVirtualBox.
 
+Step-3: Connect the FPGA Board to the device with the USB-C Cable. To check if it is connected, type the lusb command and you will see Future 
 
+Step-4: 
 
 # TASK-3:
 
 # Objective:
  To Develop a UART transmitter module capable of sending serial data from the FPGA to an external device.
 
-The uart_tx project has been accessed from the https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fthesourcerer8%2FVSDSquadron_FM%2Ftree%2Fmain%2Fuart_tx&sa=D&source=calendar&usd=2&usg=AOvVaw3-Cge9GL-4ksDqw8yRPbgl link.
+The uart_tx project has been accessed from the https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fthesourcerer8%2FVSDSquadron_FM%2Ftree%2Fmain%2Fuart_tx&sa=D&source=calendar&usd=2&usg=AOvVaw3-Cge9GL-4ksDqw8yRPbgl file.
 
-1) Signals for data flow:
+1) Signals for data flow (According to the module):
 STATE_IDLE → Waits to send the data.
 STATE_STARTTX → Sends start bit signal (0).
 STATE_TXING → Sends 8-bit data signal,it sends Least Significant Bit (LSB) first.
 STATE_TXDONE → Sends stop bit (1), marks the accomplishment of the program.
+clk,      -  input clock signal
+txbyte,   - Marks the outgoing byte
+senddata, - triggers tx (transmitter) signal
+txdone,   - signal stating outgoing byte sent
+tx,       - transmitter wire.
