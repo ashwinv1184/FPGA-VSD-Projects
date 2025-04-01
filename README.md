@@ -244,15 +244,19 @@ Step-4:
 # Objective:
  To Develop a UART transmitter module capable of sending serial data from the FPGA to an external device.
 
-The uart_tx project has been accessed from the https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fthesourcerer8%2FVSDSquadron_FM%2Ftree%2Fmain%2Fuart_tx&sa=D&source=calendar&usd=2&usg=AOvVaw3-Cge9GL-4ksDqw8yRPbgl file.
+The uart_tx project has been accessed from this file https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fthesourcerer8%2FVSDSquadron_FM%2Ftree%2Fmain%2Fuart_tx&sa=D&source=calendar&usd=2&usg=AOvVaw3-Cge9GL-4ksDqw8yRPbgl.
 
 1) Signals for data flow (According to the module):
 STATE_IDLE → Waits to send the data.
 STATE_STARTTX → Sends start bit signal (0).
 STATE_TXING → Sends 8-bit data signal,it sends Least Significant Bit (LSB) first.
 STATE_TXDONE → Sends stop bit (1), marks the accomplishment of the program.
+
+Definitions:
 clk,      -  input clock signal
 txbyte,   - Marks the outgoing byte
 senddata, - triggers tx (transmitter) signal
 txdone,   - signal stating outgoing byte sent
 tx,       - transmitter wire.
+
+2) 
