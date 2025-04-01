@@ -1,5 +1,3 @@
-
-https://github.com/user-attachments/assets/fbee9a8f-5195-4aa5-8477-215e3f2cc2ff
 # FPGA-VSD-Projects (TASK-1)
 # INTRODUCTION
 
@@ -193,8 +191,6 @@ https://github.com/user-attachments/assets/62f57dd3-ce6b-4bee-aabb-2581b359b503
 # Challenges faced and solutions implemented:
 Had to update the USB Settings in the laptop as it did not detect the option to connect with the board. Watched some videos on youtube and changed the settings. The verilog code was a bit tough to understand but understood it with the help of Meta AI (Whatsapp) and google .
 
-(https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/Makefile) 
-
 # TASK-2:
 # UART LOOPBACK PROJECT:
 
@@ -255,9 +251,6 @@ Step-4: The system will acknowledge you to type Control + c - a or Control c - h
 Step-5: Then a message will be shown as "*** local echo: yes ***". Then, type what you deserve and enter. Whatever characters you type and hit enter, all these characters will be displayed back as shown in the video. This is the demonstration of the uart loopback system and also verified within the terminal.
 
 https://github.com/user-attachments/assets/a86fd7d5-ef5f-4564-9969-ab1c05fefd6e
-
-
-
 
 
 
