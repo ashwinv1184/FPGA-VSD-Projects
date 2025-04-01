@@ -251,7 +251,7 @@ make terminal
 
 Step-4: The system will acknowledge you to type Control + c - a or Control c - h. A message will be shown as "Terminal ready"
 
-Step-5: Then a message will be shown as "*** local echo: yes ***". Then, type what you want and hit enter. Whatever characters you type and hit enter, all these characters will be displayed back as shown in the video. This is the demonstration of the uart loopback system and also verified within the terminal.
+Step-5: Then a message will be shown as "*** local echo: yes ***". Then, whatever characters you type will be immediately displayed back as shown in the video. This is the demonstration of the uart loopback system and also verified within the terminal.
 
 https://github.com/user-attachments/assets/a86fd7d5-ef5f-4564-9969-ab1c05fefd6e
 
