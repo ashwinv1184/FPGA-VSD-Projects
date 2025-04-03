@@ -343,8 +343,17 @@ Implement a UART transmitter that sends data based on sensor inputs, enabling th
 
 ## Study the existing code:
 
-The code has been referred and understood from the link here (access uart_tx_sense project)
+The code has been referred and understood from the link here (access uart_tx_sense project) https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fthesourcerer8%2FVSDSquadron_FM%2Ftree%2Fmain%2Fuart_tx_sense&sa=D&source=calendar&usd=2&usg=AOvVaw1k33Zlwngq12kaWpwd2iHp
 
+### Module declaration:
+The sense_uart_tx module is a hardware component that enables serial data transmission through a UART (Universal Asynchronous Receiver-Transmitter) interface.The sense_uart_tx module is responsible for transmitting serial data from a sensor or other device to a receiving device, such as a microcontroller or computer.
+
+Components: Outputs, inputs, Internal Oscillator, frequency counter.
+Outputs- Red, Blue and Green LED (led_red, led_blue and led_green), uarttx (transmitter)
+Inputs- uartrx (receiver), hardware clock (hw_clk)
+Baud Rate generation: 9600 Hz from 12 Mhz.
+txbyte-D : This code means that the data to be displayed on the terminal is the word "D"
+Instantiate RGB primitive-
 
 ## Design and Documentation:
 
