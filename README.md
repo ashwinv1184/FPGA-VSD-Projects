@@ -349,11 +349,22 @@ The code has been referred and understood from the link here (access uart_tx_sen
 The sense_uart_tx module is a hardware component that enables serial data transmission through a UART (Universal Asynchronous Receiver-Transmitter) interface.The sense_uart_tx module is responsible for transmitting serial data from a sensor or other device to a receiving device, such as a microcontroller or computer.
 
 Components: Outputs, inputs, Internal Oscillator, frequency counter.
+
 Outputs- Red, Blue and Green LED (led_red, led_blue and led_green), uarttx (transmitter)
+
 Inputs- uartrx (receiver), hardware clock (hw_clk)
-Baud Rate generation: 9600 Hz from 12 Mhz.
-txbyte-D : This code means that the data to be displayed on the terminal is the word "D"
-Instantiate RGB primitive-
+
+Baud Rate generation: 9600 Hz from 12 Mhz. Uses clock division.
+
+txbyte-D : This code means that the data to be displayed on the terminal is the word "D".
+
+Instantiate RGB primitive-  Controlled by  SB_RGBA_DRV RGB_DRIVER which limits the current power to the three LEDs and controls the flow of current.
+
+tx_out: An UART serial output for external communication.
+
+Shift Register- It is the 32 bit sensor data (in this module) and progressively shifts 8 bits per transmission cycle.
+
+
 
 ## Design and Documentation:
 
