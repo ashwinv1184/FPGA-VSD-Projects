@@ -338,3 +338,36 @@ Block diagram and Circuit diagram:
 
 Video demonstration:
 https://github.com/user-attachments/assets/d357b396-fe50-4995-9872-9ea229e3a210
+
+# TASK-4:
+
+## Objective: 
+Implement a UART transmitter that sends data based on sensor inputs, enabling the FPGA to communicate real-time sensor data to an external device
+
+## Study the existing code:
+
+The code has been referred and understood from the link here (access uart_tx_sense project)
+
+
+## Design and Documentation:
+
+A block diagram detailing the UART transmitter module:
+
+
+
+A circuit diagram illustrating the FPGA's UART TX pin connection to the receiving device:
+
+
+
+## Implementation, Testing and Verification:
+
+
+
+
+## Documentation:
+
+Block diagram and Circuit diagram respectively:
+
+
+
+Final Result after implementaion:
