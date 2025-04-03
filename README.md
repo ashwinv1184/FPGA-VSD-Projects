@@ -328,16 +328,13 @@ The result and demonstration is shown in the video.
 
 https://github.com/user-attachments/assets/c92f18ad-6e08-41ab-8f7f-6b4268c47260
 
-https://github.com/user-attachments/assets/d357b396-fe50-4995-9872-9ea229e3a210
-
-
 ## Documentation:
 Block diagram and Circuit diagram:
 ![image](https://github.com/user-attachments/assets/0d3d65ce-7011-4585-9762-0ec35005547b)
 ![image](https://github.com/user-attachments/assets/0c109aee-f460-4f32-9072-dcb869808ca5)
 
 Video demonstration:
-https://github.com/user-attachments/assets/d357b396-fe50-4995-9872-9ea229e3a210
+https://github.com/user-attachments/assets/c92f18ad-6e08-41ab-8f7f-6b4268c47260
 
 # TASK-4:
 
@@ -360,9 +357,21 @@ A circuit diagram illustrating the FPGA's UART TX pin connection to the receivin
 
 
 ## Implementation, Testing and Verification:
+Step-1: Clone the repository which contains the code.
 
+Step-2: Type the commands as given below
 
+make build
 
+sudo make flash
+
+sudo make terminal
+
+Result: The letter "D" will be repeated in the terminal. To stop the program, press Control and ax on the keyboard.
+
+Video Demonstration:
+
+https://github.com/user-attachments/assets/d357b396-fe50-4995-9872-9ea229e3a210
 
 ## Documentation:
 
@@ -371,3 +380,5 @@ Block diagram and Circuit diagram respectively:
 
 
 Final Result after implementaion:
+https://github.com/user-attachments/assets/d357b396-fe50-4995-9872-9ea229e3a210
+The letter "D" will be repeated in the terminal. To stop the program, press Control and ax on the keyboard.
