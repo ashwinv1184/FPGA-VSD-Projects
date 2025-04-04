@@ -387,6 +387,7 @@ A block diagram detailing the UART transmitter module:
 
 
 A circuit diagram illustrating the FPGA's UART TX pin connection to the receiving device:
+![image](https://github.com/user-attachments/assets/cb0c7cf0-62bb-4990-a511-b9603028d12f)
 
 
 
@@ -411,6 +412,7 @@ https://github.com/user-attachments/assets/d357b396-fe50-4995-9872-9ea229e3a210
 
 Block diagram and Circuit diagram respectively:
 ![image](https://github.com/user-attachments/assets/de779769-bbd5-489c-ba96-ac6f481c391d)
+![image](https://github.com/user-attachments/assets/9a2ddff5-abdc-4d76-a55b-8222fb99ed0b)
 
 
 
