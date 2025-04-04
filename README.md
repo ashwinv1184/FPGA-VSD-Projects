@@ -348,13 +348,23 @@ The code has been referred and understood from the link here (access uart_tx_sen
 ### Module declaration:
 The sense_uart_tx module is a hardware component that enables serial data transmission through a UART (Universal Asynchronous Receiver-Transmitter) interface.The sense_uart_tx module is responsible for transmitting serial data from a sensor or other device to a receiving device, such as a microcontroller or computer.
 
+This module construction contains:
+
+1. Sensor Signal Processing
+   
+2. Sensor Signal Processing
+   
+3. UART Protocol Handling
+   
+4. Sequential Logic Controller
+
 Components: Outputs, inputs, Internal Oscillator, frequency counter.
 
 Outputs- Red, Blue and Green LED (led_red, led_blue and led_green), uarttx (transmitter)
 
 Inputs- uartrx (receiver), hardware clock (hw_clk)
 
-Baud Rate generation: 9600 Hz from 12 Mhz. Uses clock division.
+Baud Rate generation: 9600 Hz baud clock from 12 Mhz. Uses clock division.
 
 txbyte-D : This code means that the data to be displayed on the terminal is the word "D".
 
@@ -364,12 +374,16 @@ tx_out: An UART serial output for external communication.
 
 Shift Register- It is the 32 bit sensor data (in this module) and progressively shifts 8 bits per transmission cycle.
 
+UART Transfer Sequence:
 
+START- Ouputs a start bit (always low-0)
+
+STOP- Outputs a stop bit (high-1), It is the code which marks the END.
 
 ## Design and Documentation:
 
 A block diagram detailing the UART transmitter module:
-
+![image](https://github.com/user-attachments/assets/de779769-bbd5-489c-ba96-ac6f481c391d)
 
 
 A circuit diagram illustrating the FPGA's UART TX pin connection to the receiving device:
