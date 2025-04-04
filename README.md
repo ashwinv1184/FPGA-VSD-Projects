@@ -410,9 +410,26 @@ https://github.com/user-attachments/assets/d357b396-fe50-4995-9872-9ea229e3a210
 ## Documentation:
 
 Block diagram and Circuit diagram respectively:
+![image](https://github.com/user-attachments/assets/de779769-bbd5-489c-ba96-ac6f481c391d)
 
 
 
 Final Result after implementaion:
 https://github.com/user-attachments/assets/d357b396-fe50-4995-9872-9ea229e3a210
 The letter "D" will be repeated in the terminal. To stop the program, press Control and ax on the keyboard.
+
+# TASK-5:
+## Project Themes:
+
+### Real-Time Sensor Data Acquisition and Transmission System:
+This theme focuses on developing systems that interface with various sensors to collect data, process it using the FPGA, and transmit the information to external devices through communication protocols like UART.​
+
+### FPGA-Based Digital Oscilloscope:
+This theme involves designing a digital oscilloscope utilizing the FPGA to sample input signals, process the data, and display waveforms on a screen, enabling real-time signal analysis.
+
+## Objectives:
+Conduct comprehensive research on the chosen theme.​
+
+Formulate a detailed project proposal outlining the system's functionality, required components, and implementation strategy
+
+
