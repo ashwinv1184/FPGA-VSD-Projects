@@ -20,7 +20,7 @@ Integrated 4MB SPI flash for storage of data and data organization.
 *** ***
 ## LED Indicators:
 RGB Light Emitting Diode has been installed in the board for manual functionality.
-***** *****
+** **
 ## FPGA Board:
 ![image](https://github.com/user-attachments/assets/93f06620-c2ce-4afd-8743-33a96eb377e0)
 
