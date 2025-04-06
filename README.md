@@ -421,18 +421,32 @@ https://github.com/user-attachments/assets/d357b396-fe50-4995-9872-9ea229e3a210
 The letter "D" will be repeated in the terminal. To stop the program, press Control and ax on the keyboard.
 
 # TASK-5:
-## Project Themes:
+## Project Theme:
 
 ### Real-Time Sensor Data Acquisition and Transmission System:
 This theme focuses on developing systems that interface with various sensors to collect data, process it using the FPGA, and transmit the information to external devices through communication protocols like UART.​
-
-### FPGA-Based Digital Oscilloscope:
-This theme involves designing a digital oscilloscope utilizing the FPGA to sample input signals, process the data, and display waveforms on a screen, enabling real-time signal analysis.
 
 ## Objectives:
 Conduct comprehensive research on the chosen theme.​
 
 Formulate a detailed project proposal outlining the system's functionality, required components, and implementation strategy
+
+### INTRODUCTION:
+
+I have selected the "Real-Time Sensor Data Acquisition and Transmission System" project theme. This project involves gathering data from sensors in real-time, manipulating and propagating it for evaluation or supervising, commonly making use of technologies like IoT and wireless communication. It involves various types of sensors to measure or detect the physical characteristics like sound, water level, distance and more... Here, the data must be grabbed and executed immediately after it is generated.
+
+
+### Required tools and Hardware components:
+
+1. A HC-SR04 Sensor
+
+2. FPGA Board
+
+3. Buzzer
+
+4. Wires for connection ( Three female-female and three male-female jumper wires)
+
+5. Software tool - Docklight
 
 
 
