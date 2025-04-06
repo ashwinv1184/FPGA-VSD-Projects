@@ -47,28 +47,28 @@ deployment, making it ideal for developers, hobbyists, and educators exploring F
 8) Onboard 3.3V and 1.2V power regulators, with the ability to supply 3.3V externally
 
 For more data on about the VSDSquadron FPGA Mini (FM)  device, refer to https://www.vlsisystemdesign.com/wp-content/uploads/2024/12/iCE40_UltraPlus_Sheet.pdf
-
+*** ***
 ## Key components of the VSDSquadron FPGA Mini (FM) board:
 
 ![image](https://github.com/user-attachments/assets/2e5dc09d-2362-4eb5-bfea-6a3246b8178a)
 
 ## Components of the board:
 ![image](https://github.com/user-attachments/assets/511b320e-c7f4-4065-84c3-08259e85a693)
-
+*** ***
 ## Dimensions:
 1) Formation factor is 57.00 x 29.00 mm
 
 3) Maximum height at the top side is 8mm
 
 5) Maximum height at the bottom side is 1mm
-
+** **
 # Objective:
 To understand and document the provided Verilog code, create the necessary PCF file, and integrate the design with the VSDSquadron FPGA Mini board using the provided datasheet. (install tools as explained in datasheet)
-
+*** ***
 # Understanding the Verilog Code:
 The verilog code has been referred from this link given below:
 https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/top.v
-
+*** ***
 ## Review of the module declaration:
 In the module top, there are 4 output wires. They are:
 1) output wire led_red  , // Red -- Shows output as red color in the RGB LED.
@@ -78,7 +78,7 @@ In the module top, there are 4 output wires. They are:
 These four output wires show us the output of our programming.
 
 5) hw_clk (Input): Hardware oscillator clock input -- It connects to the hardware oscillator. It provides the system clock signal that controls the board's timing.
-
+*** ***
 ## Internal Components:
 The module has three main internal components:
 
@@ -119,7 +119,7 @@ RGB0--(led_red)
 RGB--(led_green)
 
 RGB2--(led_blue)  
-
+*** ***
 # Creating the PCF file:
 The PCF (Physical Constraint File) file has been referred from this link given below:
  https://github.com/thesourcerer8/VSDSquadron_FM/blob/main/led_blue/VSDSquadronFM.pcf
@@ -133,7 +133,7 @@ led_green -set_io -> Pin 41
 hw_clk- set_io -> Pin 20
 
 testwire- set_io -> Pin 17
-
+*** ***
 ## Commands:
 1. set_io led_red 39 - Helps to send logical signals to control the LED to impile the color red.
 2. set_io led_blue 40 - Helps to send logical signals to control the LED to impile the color blue.
@@ -143,7 +143,7 @@ testwire- set_io -> Pin 17
 
 Pin assignments have been marked in the data sheet as purple colored circles.
 ![image](https://github.com/user-attachments/assets/cee7652c-c99b-420e-978d-e8a95147c767)
-
+*** ***
 # Integrating with the VSDSquadron FPGA Mini Board:
 Setting up the hardware and codings:
 
@@ -158,7 +158,7 @@ Setting up the hardware and codings:
 https://github.com/user-attachments/assets/62f57dd3-ce6b-4bee-aabb-2581b359b503
 
 The program has been successfully completed!
-
+*** ***
 # Summary:
 The verilog code has the control to implement the RGB LED, it also implements an UART transmitter. It has an internal oscillator to have the control flow of clock signals to the Board. There are four output wires which show us the output of our programming, One input wire provides the system clock signal that controls the board's timing. This module contains the three main internal components:
 
@@ -190,10 +190,10 @@ testwire--> Pin 17
 4) The result after uploading the program into the board:
 
 https://github.com/user-attachments/assets/62f57dd3-ce6b-4bee-aabb-2581b359b503
-
+*** ***
 # Challenges faced and solutions implemented:
 Had to update the USB Settings in the laptop as it did not detect the option to connect with the board. Watched some videos on youtube and changed the settings. The verilog code was a bit tough to understand but understood it with the help of Meta AI (Whatsapp) and google .
-
+** **
 # TASK-2:
 # UART LOOPBACK PROJECT:
 
@@ -201,7 +201,7 @@ Had to update the USB Settings in the laptop as it did not detect the option to 
 To Implement a UART loopback mechanism where transmitted data is immediately received back, facilitating testing of UART functionality.
 
 UART - Stands for Universal Asynchronous Receiver-Transmitter (Hardware Communication Protocol). It is similar to a working principle of bluetooth. It is a serial communicating device used for short distance communication between devices, commonly used in computers, chips, microcontrollers etc... It has two pins, the TX (Transmitter) pin and RX (Receiver) pin.When the data is transmitted to the TX pin, it will instantly change its route path and receives the data to the RX pin of the respective module which is being programmed. 
-
+*** ***
 ## Studying the exisiting code:
 
 The code has been studied and referred from the below link:
@@ -213,7 +213,7 @@ set_io  uarttx 14
 set_io  uartrx 15
 
 The above two codes defines the uart_loopback implementation mechanism.
-
+*** ***
 ### Analysis:
 1) Three RGB LED outputs- They are led_red, led_blue and led_green; UART transmit/receive pins-(uarttx, uartrx); System clock input signal-(hw_clk). Internal Oscilliator signal-(SB_HFOSC) which gives a high frequency oscillator and uses CLKHF_DIV = "0b10" for frequency division, produces internal clock signal (int_osc)
  
@@ -228,7 +228,7 @@ The data which is passed is received immediately to the receiver pin (uartrx) wh
 RGB driver converts UART signal to PWM output
 All RGB LEDs respond similarly to the given input signal
 Electric Current limiting set to minimum (0b000001) for each connection (channel). The Generation of timing signals (clock signals) is provided by the Frequency Counter and also used for generation of PMW (Pulse Module Width) and Time signals. Pulse Module Width (PMW) refers to a technique used in digital electronics and telecommunications to control the width of pulses in a digital signal.
-
+*** ***
 ## Design Documentation:
 
 ### UART LOOPBACK ARCHITECTURE:
@@ -236,7 +236,7 @@ Electric Current limiting set to minimum (0b000001) for each connection (channel
 
 ### Detailed circuit diagram showing connections between the FPGA and any peripheral devices
 ![image](https://github.com/user-attachments/assets/08b9af3b-594f-4c40-aac0-367a96f8d4ba)
-
+*** ***
 ## Implementation, Testing and Verification:
 
 Step-1: Start the OracleVirtualBox.
@@ -254,7 +254,7 @@ Step-4: The system will acknowledge you to type Control + c - a or Control c - h
 Step-5: Then a message will be shown as "*** local echo: yes ***". Then, whatever characters you type will be immediately displayed back as shown in the video. This is the demonstration of the uart loopback system and also verified within the terminal.
 
 https://github.com/user-attachments/assets/a86fd7d5-ef5f-4564-9969-ab1c05fefd6e
-
+*** ***
 ## Documentation:
 The diagrams explaining the uart loopback architecture and the detailed circuit diagram showing connections between the FPGA and any peripheral devices.
 
@@ -265,7 +265,7 @@ The diagrams explaining the uart loopback architecture and the detailed circuit 
 The Result with video demonstration of the uart loopback implementation in action.
 
 https://github.com/user-attachments/assets/a86fd7d5-ef5f-4564-9969-ab1c05fefd6e
-
+** **
 # TASK-3:
 
 # Objective:
@@ -274,7 +274,6 @@ https://github.com/user-attachments/assets/a86fd7d5-ef5f-4564-9969-ab1c05fefd6e
 The uart_tx project has been accessed from this file https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fthesourcerer8%2FVSDSquadron_FM%2Ftree%2Fmain%2Fuart_tx&sa=D&source=calendar&usd=2&usg=AOvVaw3-Cge9GL-4ksDqw8yRPbgl.
 
 The UART transmitter module is used for transmitting serial data from a microcontroller or other device to an external device, such as a computer or another microcontroller.
-
 
 1) Signals for data flow (According to the module):
  
@@ -307,7 +306,7 @@ tx,       - transmitter wire.
  10.Machine States:
      Idle State (STATE_IDLE),Start Bit Transmission (STATE_STARTTX),Sending Data Bits (STATE_TXING),Stop Bit Transmission (STATE_TXDONE),Transmission 
      Completion (STATE_TXDONE → STATE_IDLE)
-
+*** ***
 ## Design Documentation:
 
 A block diagram detailing the UART transmitter module:
@@ -315,8 +314,7 @@ A block diagram detailing the UART transmitter module:
 
 A circuit diagram illustrating the FPGA's UART TX pin connection to the receiving device:
 ![image](https://github.com/user-attachments/assets/0c109aee-f460-4f32-9072-dcb869808ca5)
-
-
+*** ***
 ## Implementation, Testing and Verification:
 Step-1: Build the code by using make build.
 
@@ -327,7 +325,7 @@ Step-3: Run the code by executing sudo make terminal for testing and verificatio
 The result and demonstration is shown in the video. 
 
 https://github.com/user-attachments/assets/c92f18ad-6e08-41ab-8f7f-6b4268c47260
-
+*** ***
 ## Documentation:
 Block diagram and Circuit diagram:
 ![image](https://github.com/user-attachments/assets/0d3d65ce-7011-4585-9762-0ec35005547b)
@@ -335,12 +333,12 @@ Block diagram and Circuit diagram:
 
 Video demonstration:
 https://github.com/user-attachments/assets/c92f18ad-6e08-41ab-8f7f-6b4268c47260
-
+** **
 # TASK-4:
 
 ## Objective: 
 Implement a UART transmitter that sends data based on sensor inputs, enabling the FPGA to communicate real-time sensor data to an external device
-
+*** ***
 ## Study the existing code:
 
 The code has been referred and understood from the link here (access uart_tx_sense project) https://www.google.com/url?q=https%3A%2F%2Fgithub.com%2Fthesourcerer8%2FVSDSquadron_FM%2Ftree%2Fmain%2Fuart_tx_sense&sa=D&source=calendar&usd=2&usg=AOvVaw1k33Zlwngq12kaWpwd2iHp
@@ -379,7 +377,7 @@ UART Transfer Sequence:
 START- Ouputs a start bit (always low-0)
 
 STOP- Outputs a stop bit (high-1), It is the code which marks the END.
-
+*** ***
 ## Design and Documentation:
 
 A block diagram detailing the UART transmitter module:
@@ -388,9 +386,7 @@ A block diagram detailing the UART transmitter module:
 
 A circuit diagram illustrating the FPGA's UART TX pin connection to the receiving device:
 ![image](https://github.com/user-attachments/assets/cb0c7cf0-62bb-4990-a511-b9603028d12f)
-
-
-
+*** ***
 ## Implementation, Testing and Verification:
 Step-1: Clone the repository which contains the code.
 
@@ -407,19 +403,17 @@ Result: The letter "D" will be repeated in the terminal. To stop the program, pr
 Video Demonstration:
 
 https://github.com/user-attachments/assets/d357b396-fe50-4995-9872-9ea229e3a210
-
+*** ***
 ## Documentation:
 
 Block diagram and Circuit diagram respectively:
 ![image](https://github.com/user-attachments/assets/de779769-bbd5-489c-ba96-ac6f481c391d)
 ![image](https://github.com/user-attachments/assets/9a2ddff5-abdc-4d76-a55b-8222fb99ed0b)
 
-
-
 Final Result after implementaion:
 https://github.com/user-attachments/assets/d357b396-fe50-4995-9872-9ea229e3a210
 The letter "D" will be repeated in the terminal. To stop the program, press Control and ax on the keyboard.
-
+** **
 # TASK-5:
 ## Project Theme:
 
@@ -430,12 +424,12 @@ This theme focuses on developing systems that interface with various sensors to 
 Conduct comprehensive research on the chosen theme.​
 
 Formulate a detailed project proposal outlining the system's functionality, required components, and implementation strategy
-
+*** ***
 ### INTRODUCTION:
 
 I have selected the "Real-Time Sensor Data Acquisition and Transmission System" project theme. Data Acquisition is the process of gathering, measuring and storing data from various sources in real life and converting the into digital format so that the system can process and store it. This project involves gathering data from sensors in real-time, manipulating and propagating it for evaluation or supervising, commonly making use of technologies like IoT and wireless communication. It involves various types of sensors to measure or detect the physical characteristics like sound, water level, distance and more... Here, the data must be grabbed and executed immediately after it is generated.
 
-
+*** ***
 ### Required tools and Hardware components:
 
 1. A HC-SR04 Sensor
@@ -447,6 +441,6 @@ I have selected the "Real-Time Sensor Data Acquisition and Transmission System" 
 4. Wires for connection ( Three female-female and three male-female jumper wires)
 
 5. Software tool - Docklight
-
+*** ***
 
 
