@@ -435,11 +435,11 @@ I have selected the "Real-Time Sensor Data Acquisition and Transmission System" 
 *** ***
 ### Required tools and Hardware components:
 
-1. A HC-SR04 Ultra Sonic Sensor
+1. A HC-SR04 Ultra Sonic Sensor- Used for detecting an obstacle or an object.
 
 2. FPGA Board
 
-3. Buzzer
+3. Buzzer-Produces a buzzing sound respective to the programmed code.
 
 4. Wires for connection ( Three female-female and three male-female jumper wires)
 
