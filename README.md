@@ -445,6 +445,9 @@ I have selected the "Real-Time Sensor Data Acquisition and Transmission System" 
 
 5. Software tool - Docklight
 *** ***
+### Implementation:
+Step-1:
+*** ***
 ### Things to update with timline:
 
 1.  Purchase of components - 2 days
