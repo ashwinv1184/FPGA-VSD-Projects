@@ -435,7 +435,7 @@ I have selected the "Real-Time Sensor Data Acquisition and Transmission System" 
 *** ***
 ### Required tools and Hardware components:
 
-1. A HC-SR04 Ultra Sonic Sensor- Used for detecting an obstacle or an object.
+1. A HC-SR04 Ultra Sonic Sensor- An ultrasonic sensor is an electronic device that uses sound waves (ultrasound, above the human audible range) to measure distance or detect objects by emitting pulses and measuring the time it takes for the reflected sound to return.
 
 2. FPGA Board
 
