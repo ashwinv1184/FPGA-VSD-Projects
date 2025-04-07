@@ -445,5 +445,17 @@ I have selected the "Real-Time Sensor Data Acquisition and Transmission System" 
 
 5. Software tool - Docklight
 *** ***
+### Things to update with timline:
 
+1.  Purchase of components - 2 days
+
+2.  Read more documentations and examples - 3 days
+
+3.  Update diagrams if required - 1 day
+
+4.  To write the verilog logic - 4 days
+
+5.  Assembly of components and deploying the code for testing - 2 day
+
+6.  Final documentation - 2 days
 
