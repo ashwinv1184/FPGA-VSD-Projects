@@ -427,7 +427,10 @@ Formulate a detailed project proposal outlining the system's functionality, requ
 *** ***
 ### INTRODUCTION:
 
-I have selected the "Real-Time Sensor Data Acquisition and Transmission System" project theme. Data Acquisition is the process of gathering, measuring and storing data from various sources in real life and converting the into digital format so that the system can process and store it. This project involves gathering data from sensors in real-time, manipulating and propagating it for evaluation or supervising, commonly making use of technologies like IoT and wireless communication. It involves various types of sensors to measure or detect the physical characteristics like sound, water level, distance and more... Here, the data must be collected and executed immediately after it is generated.
+I have selected the "Real-Time Sensor Data Acquisition and Transmission System" project theme. Data Acquisition is the process of gathering, measuring and storing data from various sources in real life and converting the data into digital format so that the system can process and store it. This project involves gathering data from sensors in real-time, manipulating and propagating it for evaluation or supervising, commonly making use of technologies like IoT and wireless communication. It involves various types of sensors to measure or detect the physical characteristics like sound, water level, distance and more... Here, the data must be collected and executed immediately after it is generated. I will be making this project with distance measurement sensor. This will detect the distance of an obstacle when an object is infront of it.
+*** ***
+### Block Diagram:
+![image](https://github.com/user-attachments/assets/1a509b4a-897b-425e-a4f3-5285aff12dec)
 
 *** ***
 ### Required tools and Hardware components:
