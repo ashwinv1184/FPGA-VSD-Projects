@@ -443,7 +443,7 @@ I have selected the "Real-Time Sensor Data Acquisition and Transmission System" 
 
 4. Wires for connection ( Three female-female and three male-female jumper wires)
 
-5. Software tool - 
+5. Software tool -
 *** ***
 ### Implementation:
 Step-1: Step up the connections respective to the diagram
