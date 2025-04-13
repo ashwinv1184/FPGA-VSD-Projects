@@ -443,22 +443,18 @@ I have selected the "Real-Time Sensor Data Acquisition and Transmission System" 
 
 4. Wires for connection ( Three female-female and three male-female jumper wires)
 
-5. Software tool - Docklight
+5. Software tool - 
 *** ***
 ### Implementation:
-Step-1:
+Step-1: Step up the connections respective to the diagram
+
+Step-2: Install the software for uploading, verification and testing
+
+Step-3: Upload the code into the software(compile).
 *** ***
-### Things to update with timline:
+### Testing, Verification and Explanation:
 
-1.  Purchase of components - 2 days
-
-2.  Read more documentations and examples - 3 days
-
-3.  Update diagrams if required - 1 day
-
-4.  To write the verilog logic - 4 days
-
-5.  Assembly of components and deploying the code for testing - 2 day
-
-6.  Final documentation - 2 days
-
+Test the ultrasonic sensor by bringing nearer and farer from the object. The buzzer will buzz repeatedly (many times) when the object is close to the ultrasonic sensor and the buzzer will buzz ( in a slow pace ) when an object is a bit far from the ultrasonic sensor. The buzzer will not buzz when the range of detection of the sensor is outof range. This type of projects are very useful in real life like a reverse car sensor. The sensor sends sends a sound wave which is then reflected from the obstacle and that sound wave is received by the echo. Then it is tranmitted to the buzzer and beeps itself according to the programmed code. The beeping sound will alert the driver to stop reversing the car.
+*** ***
+## My Suggestion: 
+I have been facing difficulty in learning the verilog. It will be useful if you conduct a course which teaches about verilog. It will be very helpful for the upcoming future participants. THANK YOU!
